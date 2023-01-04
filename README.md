@@ -1,1 +1,13 @@
 "# photography-collection" 
+
+電腦版
+1.運用CSS的虛擬選擇器hover及JS的onMouse事件使滑鼠移到該頁面的標籤或圖片預覽圖時，可以看到分頁相關照片預覽圖示
+2.運用JS中event 物件內的網頁座標偵測使螢幕向下滑時展開照片詳細描述
+3.運用JS中onClick事件點擊圖片可全螢幕預覽照片原圖
+4.自製捲軸運用JS中onMouse事件進行拖曳及滾動頁面，單擊可跳轉
+
+手機版
+1.運用JS中event 物件內的網頁座標偵測及onClick、onMouse事件滑鼠調整輪播圖
+2.運用JS點擊事件及CSS動畫製作漢堡展開選單
+3.運用JS中onClick事件點擊圖片可全螢幕預覽照片原圖
+4.利用JS的onresize事件及css進行RWD調整
