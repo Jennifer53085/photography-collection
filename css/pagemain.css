@@ -1,0 +1,1112 @@
+    /* 點擊後畫面緩慢上滑 */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* 外部載入文字資源 */
+    @font-face {
+        font-family: 'title brush';
+        src: url('../brush/introrustg-base2line.otf');
+    }
+
+
+    /* 將所有東西reset */
+    * {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        box-sizing: border-box;
+        font-family: 'Noto Serif TC', serif;
+        color: #fff;
+        /* outline: 5px red solid; */
+    }
+
+    *::selection {
+        background-color: #d6d0ae;
+        color: #fff;
+    }
+
+    /* 超連結設定 */
+    a {
+        text-decoration: none;
+        color: #fff
+    }
+
+
+    body {
+        /* 背景:線性變化 fixed/scoll 位置x 位置y / 寬 高 */
+        background: linear-gradient(45deg, #f3e284, #f6eab3) fixed center center/100% 100%;
+        /* 設定背景大小 */
+        width: 100%;
+
+    }
+
+    /* 頁首 */
+    header {
+        /* 下滑頁首置頂 */
+        position: sticky;
+        top: 0;
+        /* 將左右兩邊內縮一點，上下拉寬 */
+        padding: 5px 40px;
+        /* 調整頁首為一行，並將裡面兩個div分配到左右邊緣 */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #6bb6a1;
+        /* 確保header為第二層 */
+        z-index: 20;
+    }
+
+    /* 網頁板 */
+    @media (min-width:900px) {
+
+        /* 隱藏mobile導覽列 */
+        .searchmobile {
+            display: none;
+        }
+
+        /* 指定.title內的img、h1設定為一行 */
+        .title img,
+        .title h1:nth-of-type(1) {
+            display: inline-block;
+            vertical-align: middle;
+            font-family: 'title brush'
+        }
+
+        /* 設定分頁title顏色 */
+        #pagetitle {
+            color: #fff;
+            letter-spacing: 10px;
+            text-align: right;
+            font-weight: 900;
+            font-size: 40px;
+            padding-left: 25px;
+        }
+
+        /* 設定搜尋欄 */
+        /* 將input、button設定為同一欄中，調整樣式 */
+        .search {
+            position: relative;
+            width: 30%;
+            float: left;
+        }
+
+        /* 設定搜尋欄格式 */
+        .search input {
+            width: 100%;
+            height: 32px;
+            font-size: 20px;
+            border: 5px solid #f5e68b;
+            border-radius: 20px;
+            color: #d6d0ae;
+            outline: none;
+            caret-color: #d6d0ae;
+            padding-left: 6px;
+
+        }
+
+        ::placeholder {
+            color: #d6d0ae;
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        /* 設定放大鏡大小 */
+        .search button {
+            width: 36px;
+            height: 32px;
+            background-color: #f5e68b;
+            color: #fff;
+            outline: none;
+            border: 2px solid #f5e68b;
+            border-radius: 0 20px 20px 0;
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+
+        /* nav */
+        nav {
+            background-color: #df6033;
+            padding: 10px;
+            text-align: center;
+            /* box-shadow: 5px 0 5px 5px #faf9f9cc; */
+        }
+
+        /* 設定導覽列格式 */
+        nav li {
+            display: inline-block;
+            padding: 10px;
+            margin: 0 5px;
+            font-size: 25px;
+            width: 16%;
+            text-align: center;
+            letter-spacing: 5px;
+            color: #df6033;
+            background-color: #f5e68b;
+            border-bottom: 5px solid#efbf57;
+            font-weight: bold;
+            border-radius: 50px;
+        }
+
+        nav li:hover {
+            border-bottom: 5px solid rgb(255, 226, 133);
+            color: #fff;
+            font-weight: bolder;
+            background-color: #7ccaa1;
+            transition: .2s;
+            transform: translate(0, -2px) scale(1.05);
+        }
+
+        /* 點擊後出現觸擊動作 */
+        nav li:active {
+            transform: scale(1);
+            transition: .1s;
+            box-shadow: 0 0 2px #FFF;
+        }
+
+        /* 調整logo大小 */
+        #logo {
+            width: 70px;
+        }
+
+        /* 設定浮動圖案大小 */
+        .pic {
+            height: fit-content;
+        }
+
+        /* 設定導覽列及作品集之間的間距 */
+        nav+.wrap {
+            margin: 50px;
+        }
+
+        /*作品集本體 */
+
+        .wrap {
+            /* 設定裝圖案裡面的wrap大小 */
+            width: 80vw;
+            /* auto指的是剩下的使用空間 */
+            margin: auto;
+            /* 置中 */
+            position: relative;
+            left: 50%;
+            transform: translate(-55%);
+
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            /* 作品間距 */
+            margin-bottom: 100px;
+        }
+
+        .item .pic {
+            width: 55%;
+            /* 讓收縮值為0 */
+            flex-shrink: 0;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+        }
+
+        .item .pic:hover {
+            box-shadow: 0 0 10px gray;
+        }
+
+
+        .item img {
+            /* 設定width為父層.pic的100% */
+            width: 100%;
+            height: 25vh;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+
+        .item .text {
+            width: 55%;
+            font-size: x-large;
+            border: #fff 5px solid;
+            border-radius: 20px;
+            /* 讓收縮值為0 */
+            flex-shrink: 0;
+            background-color: #efbf57;
+            /* 放大文字框 */
+            padding: 50px 30px;
+            /* 將文字框及照片放在相同div內 */
+            box-sizing: border-box;
+            /* 調整文字框圖層順序 */
+            position: relative;
+            z-index: 10;
+        }
+
+        /* 沒有設定的話後面圖層會蓋前圖層(55+55=110) */
+        .item>:first-child {
+            margin-right: -10%;
+        }
+
+        /* 調整放大圖片 */
+        .scrollimg {
+
+            border: #fff solid 10px;
+            /* 圖片符合容器大小 */
+            object-fit: cover;
+            object-position: center;
+            z-index: 1;
+            transition: 0.2s;
+            /* height: 65vh; */
+        }
+
+        /* 圖層滑鼠移過去後產生變化 */
+        /* .item:nth-of-type(n):hover>.pic{
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(176, 176, 176,0.5);
+
+} */
+
+        /* 隱藏照片細部描述 */
+        .item h4,
+        h6 {
+            display: none;
+        }
+
+        /* 滑鼠經過時塗層變化 */
+
+        /* .item:nth-of-type(n):hover>.text {
+    background-color: #efbf57;
+    box-shadow: 15px 15px 0 #fff;
+    border: 0;
+    z-index: 3;
+    transition: 0.8s;
+    transform: translateY(30%);
+} */
+
+        
+
+        .textbox {
+            background-color: #efbf57;
+            box-shadow: 15px 15px 0 #fff;
+            border: 0;
+            z-index: 3;
+            transition: 0.8s;
+            transform: translateY(30%);
+        }
+
+
+
+
+        /* 滑鼠移動後顯示照片描述 */
+        /* .item:nth-of-type(n):hover h4,
+.item:nth-of-type(n):hover h6 {
+    display: block;
+} */
+
+
+
+        /* 回到頂端 */
+        .top {
+            width: 70px;
+            height: 70px;
+            clip-path: circle(50.0% at 50% 50%);
+            background-color: #d6d0ae;
+            color: #fff;
+            /* line-height: 100px */
+            text-align: center;
+            font-size: 22px;
+            font-family: 'title brush';
+            padding-top: 22px;
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            display: block;
+            transition: cubic-bezier(0.19, 1, 0.22, 1) 1s;
+
+        }
+
+
+        .topback {
+            transition: opactiy .5s;
+            opacity: 0;
+        }
+
+        /* 聯絡資料 */
+        .contact {
+            display: flex;
+            justify-content: center;
+            background-color: #6bb6a1;
+        }
+
+        .contact div i,
+        a {
+            font-weight: 900;
+            padding: 10px;
+        }
+
+        .contact a:hover {
+            text-decoration: underline overline 5px;
+        }
+
+        /* footer */
+        footer {
+            padding: 10px;
+            background-color: #df6033;
+            text-align: center;
+        }
+
+
+
+        /*調整卷軸 */
+        ::-webkit-scrollbar {
+            background: transparent;
+            width: 0;
+        }
+
+        .scroll_Bar {
+            width: 3vh;
+            height: 53vh;
+            position: fixed;
+            left: 26px;
+            top: 33vh;
+            background-color: #ffffff;
+            border: #efbf57 5px solid;
+            border-radius: 20px;
+            /* box-shadow:inset 0 0 10px #dddddd; */
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+        }
+
+        .scroll_track {
+            width: 3vh;
+            height: 3vh;
+            /* clip-path: circle(50.0% at 50% 50%); */
+            background: radial-gradient(circle at 35% 25%,
+                    #ffd4c5 0, #df6033 10%, #dc5321 50%, #a53a13 96%, #dc5321 98%, #df6033 100%);
+            position: absolute;
+            top: -1vh;
+            margin: 0;
+            border-radius: 20px;
+        }
+
+        .scroll_track:hover {
+            box-shadow: 0 0 10px #e7bc72;
+            background: radial-gradient(circle at 35% 25%,
+                    #ffe2c5 0, #e45c2a 10%, #c04518 50%, #882d0d 96%, #e45c2a 98%, #c04518 100%);
+        }
+
+        /* 放大圖案展示 */
+        /* 緩慢展開 */
+        /* 整個由左往右移動 */
+        @keyframes slow {
+            from {
+
+                width: 0%;
+            }
+
+            to {
+
+                width: 100%;
+            }
+        }
+
+
+
+        /* 淡入 */
+        @keyframes opacityin {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .model {
+            /* 讓子層在中央 */
+            display: none;
+            height: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+
+        }
+
+        .modelbox {
+            width: 90%;
+            height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .imgDisplay {
+            /* 網頁寬度 */
+            height: 90%;
+            /* width: 90%; */
+            border: 10px solid #fff;
+            border-radius: 20px;
+        }
+
+        .Xsite {
+
+            width: 50px;
+            height: 50px;
+            clip-path: circle(50.0% at 50% 50%);
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+
+
+        }
+
+        .contain {
+            /* 調整在model裡面的位置 */
+            /* margin-top: 1.5vh; */
+            align-self: start;
+
+        }
+
+        .contain:hover {
+            filter: drop-shadow(3px 3px 10px rgba(50, 50, 0, 0.8));
+        }
+
+        .textDisplay {
+            font-size: 2em;
+            text-align: center;
+            vertical-align: middle;
+            width: 40px;
+            height: 40px;
+            clip-path: circle(50.0% at 50% 50%);
+            background-color: #efbf57;
+
+        }
+
+        .show {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 設定位置 */
+            position: fixed;
+            top: 0;
+            animation-name: slow;
+            animation-duration: .5s;
+
+        }
+
+
+        .imgshow,
+        .Xshow {
+            animation-name: opacityin;
+            animation-duration: .8s;
+        }
+    }
+
+    /* 手機板 */
+    @media (max-width:900px) {
+
+
+        /* 頁首 */
+        header {
+            /* 下滑頁首置頂 */
+            position: sticky;
+            top: 0;
+            /* 將左右兩邊內縮一點，上下拉寬 */
+            padding: 5px 40px;
+            /* 調整頁首為一行，並將裡面兩個div分配到左右邊緣 */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #6bb6a1;
+            height: 18vh;
+            /* 確保header為第二層 */
+            z-index: 20;
+        }
+
+        /* 指定.title內的img、h1設定為一行 */
+        .title {
+            display: flex;
+            align-items: center;
+            font-family: 'title brush';
+        }
+
+        /* title、網頁板搜尋隱藏 */
+        .title a h1,
+        .search {
+            display: none;
+        }
+
+        /* 調整title圖片大小 */
+        .title img {
+            height: 100px;
+            width: 100px;
+            object-fit: contain;
+        }
+
+        /* 設定分頁title顏色 */
+        #pagetitle {
+            color: #fff;
+            letter-spacing: 10px;
+            text-align: right;
+            font-weight: 900;
+            font-size: 220%;
+            padding-left: 2vw;
+        }
+
+        /* 隱藏網頁搜尋列 */
+        .search {
+            display: none;
+        }
+
+        /* 手機板的導覽列 */
+        .mobilenav {
+            position: sticky;
+            top: 17.8vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'title brush';
+            background-color: #df6033;
+            color: #df6033;
+            z-index: 100;
+
+        }
+
+        /* 設定搜尋欄 */
+
+        .searchmobile {
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+            position: relative;
+            padding: 0 2vw;
+            height: 9vh;
+        }
+
+        /* 設定搜尋欄格式 */
+
+
+        @keyframes inputslow {
+            from {
+                width: 0vw;
+            }
+
+            to {
+                width: 60vw;
+            }
+
+        }
+
+        /* JS toggle->classlist */
+        .searchmobile input {
+            width: 60vw;
+            /* position: absolute;
+    top: 25px;
+    right: -10px; */
+            height: 32px;
+            font-size: 18px;
+            border: 3px solid #f5e68b;
+            border-radius: 50px;
+            color: #d6d0ae;
+            outline: none;
+            caret-color: #d6d0ae;
+            padding-left: 32px;
+            margin: 1vh 0;
+            margin-left: -32px;
+            /* display: none; */
+        }
+
+        .searchmobile input.inputDisplay {
+            display: block;
+            animation: inputslow .2s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+            width: 60vw;
+        }
+
+        .searchmobile input.inputclose {
+            animation: inputslow .2s reverse ease-in-out;
+
+        }
+
+        /* 關起來時慢慢關 */
+        .searchmobile input.inputHidden {
+            display: none;
+        }
+
+        ::placeholder {
+            color: #d6d0ae;
+            font-size: 18px;
+            text-align: justify;
+
+        }
+
+        /* 設定放大鏡大小 */
+        .searchmobile button {
+            width: 32px;
+            height: 32px;
+            background-color: #f5e68b;
+            border: 2px solid #f5e68b;
+            outline: none;
+            margin: 1vh 0;
+            color: #fff;
+            font-size: 16px;
+            clip-path: circle(50.0% at 50% 50%);
+            cursor: pointer;
+        }
+
+
+        /* 漢堡選單設定 */
+        /* 漢堡最外部 */
+        .burger {
+            width: 50px;
+            height: 50px;
+            padding: 10px;
+            margin-right: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* 漢堡每一個橫條樣式 */
+        .line {
+            background-color: rgb(255, 255, 255);
+            border-radius: 20px;
+            width: 35px;
+            height: 5px;
+            margin: 3px 0;
+        }
+
+        /* 開啟時動畫 */
+        .open .line:nth-child(1) {
+            animation: line1 1s forwards cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .open .line:nth-child(2) {
+            animation: line2 1s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        .open .line:nth-child(3) {
+            animation: line3 1s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        /* 關閉時動畫 */
+        .close .line:nth-child(1) {
+            animation: line1 .4s reverse ease-in;
+        }
+
+        .close .line:nth-child(2) {
+            animation: line2 .4s reverse cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        .close .line:nth-child(3) {
+            animation: line3 .4s reverse cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+
+        /* 每一列的分別動畫 */
+        @keyframes line1 {
+
+            15% {
+                width: 5px;
+                transform: translateY(-5px);
+            }
+
+            100% {
+                width: 1px;
+                transform: translateY(-50px);
+            }
+        }
+
+        @keyframes line2 {
+            15% {
+                transform: translateY(0) rotate(-5deg);
+            }
+
+            20% {
+                transform: translateY(4px) rotate(10deg);
+            }
+
+            25% {
+                transform: translateY(-14px)rotate(-10deg);
+            }
+
+            30% {
+
+                transform: translateY(0) rotate(375deg);
+            }
+
+            100% {
+                transform: translateY(0) rotate(-45deg);
+            }
+        }
+
+        @keyframes line3 {
+            15% {
+                transform: translateY(0vh) rotate(5deg);
+            }
+
+            20% {
+                transform: translateY(7px) rotate(-10deg);
+            }
+
+            25% {
+                transform: translateY(-14px)rotate(10deg);
+            }
+
+            30% {
+
+                transform: translateY(0) rotate(375deg);
+            }
+
+            100% {
+                transform: translateY(-10px) rotate(45deg);
+            }
+        }
+
+        /* nav */
+        /* 設定開關 */
+
+
+        nav {
+            background-color: #df6033;
+           
+            padding: 10px;
+            text-align: center;
+            display: none;
+            z-index: 800;
+            position: fixed;
+            top: 26vh;
+            width: 100%;
+            /* box-shadow: 5px 0 5px 5px #faf9f9cc; */
+        }
+
+        nav.navDisplay {
+            display: block;
+
+        }
+
+        nav li.liDisplay {
+            transition: opacity .8s ease;
+            opacity: 1;
+        }
+
+
+
+        /* 設定導覽列格式 */
+        nav li {
+            /* display: inline-block; */
+            padding: 1vw;
+            margin: auto;
+            font-size: 180%;
+            width: 90%;
+            text-align: center;
+            letter-spacing: 2vw;
+            background-color: #f5e68b;
+            border-bottom: 5px solid#efbf57;
+            font-weight: bold;
+            border-radius: 50px;
+            opacity: 0;
+            color:#df6033;
+        }
+
+        /* 點擊後出現觸擊動作 */
+        nav li:active,
+        nav li:hover {
+            transform: translate(0, -2px) scale(1.05);
+            transition: .1s;
+            box-shadow: 0 0 2px #FFF;
+            border-bottom: 5px solid rgb(255, 226, 133);
+            color: #fff;
+            font-weight: bolder;
+            background-color: #7ccaa1;
+        }
+
+        /* 調整logo大小 */
+        #logo {
+            width: 70px;
+        }
+
+        nav+.wrap {
+            margin-top: 2vh;
+        }
+
+        /*作品集本體 */
+        .wrap {
+
+            font-weight: bold;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .item {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            width: 80%;
+        }
+
+
+
+        /* 設定作品集圖案 */
+        .pic {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            margin: 2vh auto;
+            border-radius: 20px;
+        }
+
+
+        .pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: #fff 10px solid;
+            border-radius: 20px;
+            margin: 2vh auto;
+        }
+
+        /* 設定作品集文字 */
+        .text {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            padding: 20px 30px;
+            font-size: 0.8rem;
+            background-color: #efbf57;
+            border-radius: 20px;
+            z-index: 3;
+
+        }
+
+        /* 滑鼠移動到頁面上面時 */
+        /* 文字 */
+
+        .item:hover .pic img {
+            box-shadow: 0 0 10px gray;
+        }
+
+        /* 設定手機h4不顯示 */
+        .item h4 {
+            display: none;
+        }
+
+
+        /* 回到頂端 */
+        .top {
+            width: 40px;
+            height: 40px;
+            clip-path: circle(50.0% at 50% 50%);
+            background-color: #d6d0ae;
+            color: #fff;
+            /* line-height: 100px */
+            text-align: center;
+            font-size: 15px;
+            font-family: 'title brush';
+            padding: 11px 6px 6px;
+            position: fixed;
+            right: 10px;
+            bottom: 8px;
+            display: block;
+            transition: cubic-bezier(0.19, 1, 0.22, 1) 1s;
+
+        }
+
+        /* 設定.contact與.item間有距離 */
+        a~.contact {
+            margin-top: 5vh;
+        }
+
+        /* 聯絡資料 */
+        .contact {
+            display: flex;
+            justify-content: center;
+            background-color: #6bb6a1;
+            font-size: 0.8rem;
+        }
+
+        .contact div i,
+        a {
+            font-weight: 900;
+            padding: 10px;
+        }
+
+        .contact a:active {
+            text-decoration: underline overline 5px;
+        }
+
+        /* footer */
+        footer {
+            padding: 10px;
+            background-color: #df6033;
+            text-align: center;
+            font-size: 0.5rem;
+        }
+
+
+
+        /*調整卷軸 */
+
+        .scroll_Bar {
+            display: none;
+        }
+
+
+        /* 放大圖案展示 */
+        /* 緩慢展開 */
+        /* 整個由左往右移動 */
+        @keyframes slow {
+            from {
+
+                width: 0%;
+            }
+
+            to {
+
+                width: 100%;
+            }
+        }
+
+
+
+        /* 淡入 */
+        @keyframes opacityin {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .model {
+            /* 讓子層在中央 */
+            display: none;
+            height: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+
+        }
+
+        .modelbox {
+            width: 90%;
+            height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 手機版本換成寬度 */
+        .imgDisplay {
+            width: 90%;
+            height: 95%;
+            border: 10px solid #fff;
+            border-radius: 20px;
+            object-fit: contain;
+            background-color: #fff;
+        }
+
+        .modeltext {
+            display: none;
+        }
+
+        /* 套入全螢幕內的文字大小 */
+        .model:hover .modeltext {
+            position: absolute;
+            bottom: 8.5%;
+            width: 80%;
+            font-size: 120%;
+            background-color: #c04518d3;
+            padding: 5%;
+            border: #ffec98d6 20px double;
+            border-radius: 20px;
+            display: block;
+        }
+
+
+
+
+        /* 關閉按鈕的裝飾 */
+        .textDisplay {
+            font-size: 2em;
+            text-align: center;
+            vertical-align: middle;
+            width: 40px;
+            height: 40px;
+            clip-path: circle(50.0% at 50% 50%);
+            background-color: #efbf57;
+
+        }
+
+        .Xsite {
+
+            width: 50px;
+            height: 50px;
+            clip-path: circle(50.0% at 50% 50%);
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin-top: 1.8vh;
+            margin-right: 2vw;
+
+        }
+
+        .contain {
+            /* 手機板 */
+            position: absolute;
+            top: 3vh;
+            right: 5vw;
+        }
+
+        .contain:hover {
+            filter: drop-shadow(3px 3px 10px rgba(50, 50, 0, 0.8));
+        }
+
+        /* 關閉按鈕 */
+        .modelclose {
+            font-size: 2em;
+            text-align: center;
+            vertical-align: middle;
+            width: 40px;
+            height: 40px;
+            clip-path: circle(50.0% at 50% 50%);
+            background-color: #efbf57;
+        }
+
+        .show {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 設定位置 */
+            position: fixed;
+            top: 0;
+            animation-name: slow;
+            animation-duration: .5s;
+
+        }
+
+
+        .imgshow,
+        .Xshow {
+            animation-name: opacityin;
+            animation-duration: .8s;
+        }
+    }

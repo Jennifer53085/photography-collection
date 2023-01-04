@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEMON MONSTER PHOTOGRAPHY>人像</title>
+    <link rel="icon" href="../LOGO黑.png">
+    <script src="https://kit.fontawesome.com/11f63461bc.js"></script>
+    <link rel="stylesheet" href="../css/human.css">
+    <style>
+        /* 文字展開 */
+        /* 隱藏照片細部描述 */
+        .item h4,
+        h6 {
+            display: none;
+        }
+
+        /* 滑鼠經過時塗層變化 */
+
+        .textbox {
+            background-color: #efbf57;
+            box-shadow: 15px 15px 0 #fff;
+            border: 0;
+            z-index: 3;
+            transition: 0.8s;
+            transform: translateY(30%);
+        }
+
+        /* 相片集 */
+        .imgback1 {
+            width: 100%;
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotate(0deg);
+            top: 40px;
+            background-color: #69bcb1;
+            border-radius: 20px;
+        }
+
+        .imgback1:hover {
+            transform: rotate(5deg) scale(1.05);
+        }
+
+        .imgback2 {
+            width: 100%;
+            height: 50vh;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotate(-2deg);
+            top: 40px;
+            background-color: #f6e261;
+        }
+
+        .imgback2:hover {
+            transform: rotate(-10deg);
+        }
+
+
+        .imgback2>img {
+            height: 50vh;
+            transform: rotate(-2deg);
+            border: 10px solid #fff;
+        }
+
+        .imgback2>img:hover {
+            transform: rotate(5deg);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 頁首 -->
+    <header>
+        <!-- icon、標題靠左-->
+
+        <div class="title">
+            <a href="./photography.html">
+                <img src="../LOGO白.png" id="logo">
+                <h1>LEMON MONSTER <br>PHOTOGRAPHY</h1>
+            </a>
+            <h1 id="pagetitle">人像</h1>
+        </div>
+
+        <!-- 搜尋欄靠右 -->
+        <div class="search">
+            <input placeholder="搜尋..."><button><i class="fa fa-search"></i></button>
+        </div>
+    </header>
+    <!-- 手機板的導覽列 -->
+    <div class="mobilenav">
+        <div class="searchmobile">
+            <button><i class="fa fa-search"></i></button><input placeholder="搜尋..." class="inputHidden">
+        </div>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </div>
+    <nav>
+        <!-- 相簿分類 -->
+        <ul>
+
+            <a href="./micropage.html">
+                <li>微距</li>
+            </a>
+            <a href="./animalpage.html">
+                <li>動物</li>
+            </a>
+            <a href="./buildingpage.html">
+                <li>建築</li>
+            </a>
+            <a href="./foodpage.html">
+                <li>食物</li>
+            </a>
+            <a href="./naturepage.html">
+                <li>自然景觀</li>
+            </a>
+        </ul>
+    </nav>
+    <!-- 圖片庫 -->
+    <div class="wrap">
+        <!-- 人像last1 -->
+
+        <div class="item">
+
+            <div class="pic">
+                <div class="imgback1">
+
+                    <div class="imgback2">
+                        <img src="../human/千.jpg" alt="千越大樓">
+                    </div>
+                </div>
+
+            </div>
+            <div class="text">
+                <h2>千越大樓作品集</h2>
+                <h4>就是要拍廢墟啦。</h4>
+                <h6>攝於2021</h6>
+            </div>
+        </div>
+        <!-- 人像last2 -->
+        <div class="item">
+            <div class="text">
+                <h2>九天黑森林作品集</h2>
+                <h4></h4>
+                <h6>攝於2021</h6>
+            </div>
+            <div class="pic">
+                <div class="imgback1">
+
+                    <div class="imgback2">
+                        <img src="../human/九1.JPG" alt="九天黑森林">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- 人像last3 -->
+        <div class="item">
+            <div class="pic">
+                <div class="imgback1">
+
+                    <div class="imgback2">
+                        <img src="../human/右派.jpg" alt="右派">
+                    </div>
+                </div>
+            </div>
+            <div class="text">
+                <h2>塗鴉風格作品集</h2>
+                <h4>打倒資本主義的高牆</h4>
+                <h6>攝於2021</h6>
+            </div>
+        </div>
+        <!-- 人像last4 -->
+        <div class="item">
+            <div class="text">
+                <h2>夕陽作品集</h2>
+                <h4>夕陽無限好，只是近黃昏</h4>
+                <h6>攝於2021</h6>
+            </div>
+            <div class="pic">
+                <div class="imgback1">
+
+                    <div class="imgback2">
+
+                        <img src="../human/夕陽.jpg" alt="夕陽">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 人像last5 -->
+        <div class="item">
+            <div class="pic">
+                <div class="imgback1">
+
+                    <div class="imgback2">
+
+                        <img src="../human/LINE_ALBUM_2020.09.27鹿港市集_221006.jpg" alt="街景">
+                    </div>
+                </div>
+            </div>
+            <div class="text">
+                <h2>街景拍攝作品集</h2>
+                <h4></h4>
+                <h6>攝於2021</h6>
+            </div>
+        </div>
+        <!-- 人像last6 -->
+        <div class="item">
+            <div class="text">
+                <h2>拉拉熊屋作品集</h2>
+                <h4>好吃，我是盤子</h4>
+                <h6>攝於2021</h6>
+            </div>
+            <div class="pic">
+                <div class="imgback1">
+
+                    <div class="imgback2">
+                        <img src="../human/拉拉熊.jpg" alt="拉拉熊餐廳">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" id="top">TOP</a>
+    <div class="contact">
+        <div><i class="fa-solid fa-envelope"></i><a href="mailto:jennifer53085@gmail.com">jennifer53085@gmail.com</a>
+        </div>
+        <div><i class="fa-brands fa-instagram"></i><a href="https://www.instagram.com/lemonmonster7971/"
+                target="_blank">Lemonmoster_7971</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright&copy;Tzu-ning Huang 2022</p>
+    </footer>
+    <!-- 捲軸 -->
+    <div class="scroll_Bar">
+        <div class="scroll_track"></div>
+    </div>
+
+    <!-- 旋轉木馬區 -->
+    <!-- 展示的旋轉木馬 -->
+    <!-- 千越大樓 -->
+    <div class="model">
+        <div class="contain">
+            <div class="Xsite">
+                <span class="textDisplay">&times;</span>
+            </div>
+        </div>
+        <div class="carousel">
+            <div class="carousel__body">
+                <div class="carousel__prev"></div>
+                <div class="carousel__next"></div>
+                <div class="carousel__slider">
+                    <div class="carousel__slider__item">
+                        <div class="item__3d-frame">
+                            <div class="item__3d-frame__box item__3d-frame__box--front">
+                                <img src="../human/千1.jpg" alt="">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                            <div class="item__3d-frame__box item__3d-frame__box--right"> </div>
+                        </div>
+                    </div>
+                    <div class="carousel__slider__item">
+                        <div class="item__3d-frame">
+                            <div class="item__3d-frame__box item__3d-frame__box--front">
+                                <img src="../human/千2.jpg" alt="">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                            <div class="item__3d-frame__box item__3d-frame__box--right"> </div>
+                        </div>
+                    </div>
+                    <div class="carousel__slider__item">
+                        <div class="item__3d-frame">
+                            <div class="item__3d-frame__box item__3d-frame__box--front">
+                                <img src="../human/千3.jpg" alt="">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                            <div class="item__3d-frame__box item__3d-frame__box--right"> </div>
+                        </div>
+                    </div>
+                    <div class="carousel__slider__item">
+                        <div class="item__3d-frame">
+                            <div class="item__3d-frame__box item__3d-frame__box--front">
+                                <img src="../human/千4.jpg" alt="">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                            <div class="item__3d-frame__box item__3d-frame__box--right"> </div>
+                        </div>
+                    </div>
+                    <div class="carousel__slider__item">
+                        <div class="item__3d-frame">
+                            <div class="item__3d-frame__box item__3d-frame__box--front">
+                                <img src="../human/千5.jpg" alt="">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                            <div class="item__3d-frame__box item__3d-frame__box--right"> </div>
+                        </div>
+                    </div>
+                    <div class="carousel__slider__item">
+                        <div class="item__3d-frame">
+                            <div class="item__3d-frame__box item__3d-frame__box--front">
+                                <img src="../human/千6.jpg" alt="">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                            <div class="item__3d-frame__box item__3d-frame__box--right"> </div>
+                        </div>
+                    </div>
+                    <div class="carousel__slider__item">
+                        <div class="item__3d-frame">
+                            <div class="item__3d-frame__box item__3d-frame__box--front">
+                                <img src="../human/千7.jpg" alt="">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                            <div class="item__3d-frame__box item__3d-frame__box--right"> </div>
+                        </div>
+                    </div>
+                    <div class="carousel__slider__item">
+                        <div class="item__3d-frame">
+                            <div class="item__3d-frame__box item__3d-frame__box--front">
+                                <img src="../human/千8.jpg" alt="">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                            <div class="item__3d-frame__box item__3d-frame__box--right"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 九天黑森林 -->
+    <div class="model">
+        <div class="contain">
+            <div class="Xsite">
+                <span class="textDisplay">&times;</span>
+            </div>
+        </div>
+        <div class="carousel">
+            <div class="carousel__body">
+                <div class="carousel__prev"></div>
+                <div class="carousel__next"></div>
+                <div class="carousel__slider">
+                    <div class="carousel__slider__item">
+                        <div class="item__3d-frame">
+                            <div class="item__3d-frame__box item__3d-frame__box--front">
+                                <img src="../human/九1.JPG" alt="">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                            <div class="item__3d-frame__box item__3d-frame__box--right"> </div>
+                        </div>
+                    </div>
+                    <div class="carousel__slider__item">
+                        <div class="item__3d-frame">
+                            <div class="item__3d-frame__box item__3d-frame__box--front">
+                                <img src="../human/九2.JPG" alt="">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                            <div class="item__3d-frame__box item__3d-frame__box--right"> </div>
+                        </div>
+                    </div>
+                    <div class="carousel__slider__item">
+                        <div class="item__3d-frame">
+                            <div class="item__3d-frame__box item__3d-frame__box--front">
+                                <img src="../human/九3.JPG" alt="">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                            <div class="item__3d-frame__box item__3d-frame__box--right"> </div>
+                        </div>
+                    </div>
+                    <div class="carousel__slider__item">
+                        <div class="item__3d-frame">
+                            <div class="item__3d-frame__box item__3d-frame__box--front">
+                                <img src="../human/九4.JPG" alt="">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                            <div class="item__3d-frame__box item__3d-frame__box--right"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 塗鴉風格作品 -->
+    <div class="model">
+        <div class="contain">
+            <div class="Xsite">
+                <span class="textDisplay">&times;</span>
+            </div>
+        </div>
+        <div class="carousel">
+            <div class="carousel__body">
+                <div class="carousel__prev"></div>
+                <div class="carousel__next"></div>
+                <div class="carousel__slider">
+                    <div class="carousel__slider__item">
+                        <div class="item__3d-frame">
+                            <div class="item__3d-frame__box item__3d-frame__box--front">
+                                <img src="../human/右派.jpg" alt="">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                            <div class="item__3d-frame__box item__3d-frame__box--right"> </div>
+                        </div>
+                    </div>
+                    <div class="carousel__slider__item">
+                        <div class="item__3d-frame">
+                            <div class="item__3d-frame__box item__3d-frame__box--front">
+                                <img src="../human/右派2.jpg" alt="">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                            <div class="item__3d-frame__box item__3d-frame__box--right"> </div>
+                        </div>
+                    </div>
+                    <div class="carousel__slider__item">
+                        <div class="item__3d-frame">
+                            <div class="item__3d-frame__box item__3d-frame__box--front">
+                                <img src="../human/右派3.jpg" alt="">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                            <div class="item__3d-frame__box item__3d-frame__box--right"> </div>
+                        </div>
+                    </div>
+                    <div class="carousel__slider__item">
+                        <div class="item__3d-frame">
+                            <div class="item__3d-frame__box item__3d-frame__box--front">
+                                <img src="../human/右派4.jpg" alt="">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                            <div class="item__3d-frame__box item__3d-frame__box--right"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 夕陽 -->
+    <div class="model">
+        <div class="contain">
+            <div class="Xsite">
+                <span class="textDisplay">&times;</span>
+            </div>
+        </div>
+        <div class="carousel">
+            <div class="carousel__body">
+                <div class="carousel__prev"></div>
+                <div class="carousel__next"></div>
+                <div class="carousel__slider">
+                    <div class="carousel__slider__item">
+                        <div class="item__3d-frame">
+                            <div class="item__3d-frame__box item__3d-frame__box--front">
+                                <img src="../human/LINE_ALBUM_20200409眺高_221006.jpg" alt="">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--left">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--right">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel__slider__item">
+                        <div class="item__3d-frame">
+                            <div class="item__3d-frame__box item__3d-frame__box--front">
+                                <img src="../human/夕陽.jpg" alt="">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--left">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--right">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel__slider__item">
+                        <div class="item__3d-frame">
+                            <div class="item__3d-frame__box item__3d-frame__box--front">
+                                <img src="../human/夕陽3.jpg" alt="">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--left">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--right">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 街頭 -->
+    <div class="model">
+        <div class="contain">
+            <div class="Xsite">
+                <span class="textDisplay">&times;</span>
+            </div>
+        </div>
+        <div class="carousel">
+            <div class="carousel__body">
+                <div class="carousel__prev"></div>
+                <div class="carousel__next"></div>
+                <div class="carousel__slider">
+                    <div class="carousel__slider__item">
+                        <div class="item__3d-frame">
+                            <div class="item__3d-frame__box item__3d-frame__box--front">
+                                <img src="../human/街拍.jpg" alt="">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--left">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--right">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel__slider__item">
+                        <div class="item__3d-frame">
+                            <div class="item__3d-frame__box item__3d-frame__box--front">
+                                <img src="../human/LINE_ALBUM_2020.09.27鹿港市集_221006.jpg" alt="">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--left">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--right">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel__slider__item">
+                        <div class="item__3d-frame">
+                            <div class="item__3d-frame__box item__3d-frame__box--front">
+                                <img src="../human/LINE_ALBUM_20191216_221006.jpg" alt="">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--left">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--right">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 拉拉熊屋 -->
+    <div class="model">
+        <div class="contain">
+            <div class="Xsite">
+                <span class="textDisplay">&times;</span>
+            </div>
+        </div>
+        <div class="carousel">
+            <div class="carousel__body">
+                <div class="carousel__prev">
+                </div>
+                <div class="carousel__next">
+                </div>
+                <div class="carousel__slider">
+                    <div class="carousel__slider__item">
+                        <div class="item__3d-frame">
+                            <div class="item__3d-frame__box item__3d-frame__box--front">
+                                <img src="../human/拉拉熊.jpg" alt="">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--left">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--right">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel__slider__item">
+                        <div class="item__3d-frame">
+                            <div class="item__3d-frame__box item__3d-frame__box--front">
+                                <img src="../human/拉拉熊1.jpg" alt="">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--left">
+                            </div>
+                            <div class="item__3d-frame__box item__3d-frame__box--right">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------------------------------------------------------------- -->
+    <script src="../js/human.js"></script>
+
+</body>
+
+</html>
